@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Enfj</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
+
+</head>
+<body>
+
+<br>
+<div id="main" align="center">
+<img src="{% static "quiz/logo.jpg" %}" width="769" height="300" alt="logo"/>
+<br>
+<h1>You are INFJ</h1>
+<br>
+<h2>The Protector : ผู้ป้องกัน</h2>
+
+   คุณเป็นคนที่มองไปในอนาคต ใช้ความรู้และความใฝ่ฝันของคุณในการพยายามเข้าใจตัวเองและเข้าถึงธรรมชาติของมนุษย์ งานที่คุณทำจะบ่งบอกถึงความซื่อสัตย์และมั่นคง และสะท้อนให้เห็นถึงอุดมการณ์ที่มีอยู่ในใจ การอยู่คนเดียวและได้ทำในสิ่งที่คุณต้องการมีความสำคัญต่อคุณ คุณเป็นคนที่มีความเมตตา และอยากให้ทุกคนปรองดองและสามัคคีกัน คุณพยายามอย่างที่สุดที่จะหลีกเลี่ยงการมีปัญหากับใคร
+
+   อาชีพที่เหมาะสมกับลักษณะบุคลิกภาพ : เสมียน นักจิตวิทยา จิตแพทย์ นักดนตรี นักเขียน นักสังคมสงเคราะห์ ครู แพทย์ ศิลปิน งานให้คำปรึกษา งานธุรกิจ งานแนะแนวการศึกษา พระ นักนิเทศศาสตร์ ครู(ภาษา/ศิลปะ)
+<br><br><br>
+<a href="{% url 'quiz:index' %}">
+more information
+</a>
+<br>
+<h2>INFJ เข้ากันได้ดีที่สุดกับ</h2>
+<a href="{% url 'quiz:index' %}">ENTP</a> <br>
+<a href="{% url 'quiz:index' %}">ENFP</a> <br>
+<a href="{% url 'quiz:index' %}">INFJ</a> <br>
+<a href="{% url 'quiz:index' %}">INFP</a> <br>
+<a href="{% url 'quiz:index' %}">ENFJ</a> <br>
+
+<br>
+<a href="{% url 'quiz:index' %}">
+<img src="{% static "quiz/home.png" %}" width="100" height="100" alt="home"/>
+</a>
+<br>
+<a href="{% url 'quiz:personality' %}">
+<img src="{% static "quiz/help.png" %}" width="150" height="100" alt="key"/>
+</a>
+<br><br><br>
+</div>
+</body>
+</html>
+
+
+

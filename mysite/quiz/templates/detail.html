@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>MBTI Test</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
+
+</head>
+<body>
+
+<br>
+<div id="main">
+<br>
+<p align="center">
+<img src="{% static "quiz/logo.jpg" %}" width="769" height="300" alt="logo"/>
+</p>
+<h1>Answer the Question</h1>
+<br>
+
+<div id="leftM" align="center">
+
+<!--ถ้าตอบไม่ครบจะแสดง-->
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:red">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="{% url 'quiz:add_player' %}" method="post">
+
+{% csrf_token %}
+
+{% for question in latest_question_list %}
+
+    <h2>{{ question.question_text }}<h2>
+	{% for choice in question.choice_set.all %}
+<ul>
+            {% if choice.corrects == 0 %}
+	    <input type="radio" id="f-option" name="{{question.id}}" id="choice{{ forloop.counter }}" style="color:red" value="{{ choice.corrects }}" />
+            <label style="color:red" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
+            {% else %}
+	    <input type="radio" id="f-option" name="{{question.id}}" id="choice{{ forloop.counter }}" style="color:green" value="{{ choice.corrects }}" />
+            <label style="color:green" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
+            {% endif %}
+</ul>
+	{% endfor %}
+    <br>
+{% endfor %}
+
+</div>
+
+<div align="center">
+    <br><br>
+    <h4>Nickname</h4>
+    <input type="text" name="addPlayer" maxlength="99" size="30"/><br>
+    <br>
+    <img src="{% static "quiz/facebook.png" %}" width="100" height="100" alt="fb"/><br>
+    <input type="text" name="add_Facebook" maxlength="99" size="30"/><br>
+    <br><br><br>
+    <button class="button button1">Submit</button>
+</form>
+
+<br><br>
+<a href="{% url 'quiz:index' %}">
+<img src="{% static "quiz/home.png" %}" width="100" height="100" alt="home"/>
+</a>
+</div>
+<br><br><br>
+</div>
+</body>
+</html>
+

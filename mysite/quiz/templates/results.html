@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+p.uppercase {
+    text-transform: uppercase;
+}
+
+p.lowercase {
+    text-transform: lowercase;
+}
+
+p.capitalize {
+    text-transform: capitalize;
+}
+</style>
+<title>Result</title>
+
+{% loa
+d static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
+
+</head>
+<body>
+<br>
+<div id="main" align="center">
+<img src="{% static "quiz/logo.jpg" %}" width="769" height="300" alt="logo"/>
+<br>
+<h1>You are {{the_personality}}</h1>
+<br>
+<br><br><br>
+
+<a href="{% url link %}">
+<img src="{% static "quiz/info.jpg" %}" width="200" height="100" alt="info"/>
+</a>
+
+<br><br><br>
+
+
+<br>
+<a href="{% url 'quiz:index' %}">
+<img src="{% static "quiz/home.png" %}" width="100" height="100" alt="home"/>
+</a>
+<br>
+<a href="{% url 'quiz:personality' %}">
+<img src="{% static "quiz/help.png" %}" width="150" height="100" alt="key"/>
+</a>
+<br><br><br>
+</div>
+</body>
+</html>
+
+
+

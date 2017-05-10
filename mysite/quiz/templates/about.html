@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
+
+</head>
+<body>
+
+<br>
+<div id="main" align="center">
+<img src="{% static "quiz/logo.jpg" %}" width="769" height="300" alt="logo"/>
+<br>
+<div id="main" align="left">
+<h1>About</h1>
+<br>
+<h2>Version 1.0</h2>
+
+Django Framework Version 1.10.5 and Selenium version 3.3.1<br>
+หาบุคลิก BMTI allow to insert Facebook<br>
+เนื้อหาจาก : <a href="https://pantip.com/topic/32977399">https://pantip.com/topic/32977399</a><br>
+<h2>จัดทำโดย</h2>
+นาย ศุภณ์กัญจน์ สัตตพงศ์ 5701012620128
+<br><br><br>
+
+<br><br>
+</div>
+<a href="{% url 'quiz:index' %}">
+<img src="{% static "quiz/home.png" %}" width="100" height="100" alt="home"/>
+</a>
+<br><br><br>
+</div>
+</body>
+</html>
+
+
+

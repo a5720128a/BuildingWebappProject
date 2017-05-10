@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Index</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
+
+</head>
+<body>
+
+<br>
+<div id="main" align="center">
+<img src="{% static "quiz/logo.jpg" %}" width="769" height="300" alt="logo"/>
+<br>
+<h1>MBTI</h1>
+<br>
+
+<h2>recently<h2>
+<ul>
+<table>
+{% if latest_player_list %}
+    <tr>
+	<th>Player</th>
+	<th>Personality</th>
+    </tr>
+    {% for player in latest_player_list %}
+    <tr>
+        <td>{{ player.player_text }}</td></li>
+	<td>{{ player.personaltiy }}</td>
+    </tr>
+    {% endfor %}    
+{% else %}
+    <p><h5>No player play this quiz.<h5></p>
+{% endif %}
+</table>
+</ul>
+<br>
+<a href="{% url 'quiz:detail' %}">
+<img src="{% static "quiz/start.png" %}" width="150" height="100" alt="play"/>
+</a>
+<br>
+<a href="{% url 'quiz:personality' %}">
+<img src="{% static "quiz/personality.gif" %}" width="150" height="100" alt="key"/>
+</a>
+<br>
+<a href="{% url 'quiz:about' %}">
+<img src="{% static "quiz/about.jpg" %}" width="200" height="75" alt="about"/>
+</a>
+<br><br><br>
+</div>
+</body>
+</html>
+
+
+
