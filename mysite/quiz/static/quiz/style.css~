@@ -222,7 +222,9 @@ input[type=radio]:checked ~ label{
 }
 
 #margin {
-	margin-left: 610px;
+	width:80%;
+    margin: 10px auto;
+    background: white;
 }
 header {
     position: relative;
@@ -285,4 +287,19 @@ nav ul1 li a {
 
 
 input[type=text] { text-align:center }
+
+.radio-toolbar input[type="radio"] {
+  display: none;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  background-color:  	#F5F5F5;
+  width: 100%;
+  padding: 4px 11px;
+  cursor: pointer;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+  background-color: #b
 
