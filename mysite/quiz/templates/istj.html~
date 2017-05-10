@@ -48,6 +48,7 @@ ISTJ เข้ากันได้ดีที่สุดกับ <a href="{%
 <img src="{% static "quiz/facebook.png" %}" width="100" height="100" alt="home"/>
 </p>
 <br>
+
 <div id="main" align="center">
 <table>
 {% if player.personality == "ISTJ" %}
@@ -67,6 +68,7 @@ ISTJ เข้ากันได้ดีที่สุดกับ <a href="{%
 {% endif %}
 </table>
 </div>
+
 <br><br>
 </div>
 <a href="{% url 'quiz:index' %}">

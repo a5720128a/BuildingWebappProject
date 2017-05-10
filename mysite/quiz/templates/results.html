@@ -16,8 +16,7 @@ p.capitalize {
 </style>
 <title>Result</title>
 
-{% loa
-d static %}
+{% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
 
@@ -44,7 +43,7 @@ d static %}
 </a>
 <br>
 <a href="{% url 'quiz:personality' %}">
-<img src="{% static "quiz/help.png" %}" width="150" height="100" alt="key"/>
+<img src="{% static "quiz/personality.gif" %}" width="150" height="100" alt="key"/>
 </a>
 <br><br><br>
 </div>

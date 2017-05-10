@@ -31,7 +31,7 @@ p.capitalize {
 <br><br><br>
 
 <a href="{% url link %}">
-<img src="{% static "quiz/info.jpg" %}" width="200" height="100" alt="logo"/>
+<img src="{% static "quiz/info.jpg" %}" width="200" height="100" alt="info"/>
 </a>
 
 <br><br><br>
