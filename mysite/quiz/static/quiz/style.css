@@ -301,5 +301,5 @@ input[type=text] { text-align:center }
 }
 
 .radio-toolbar input[type="radio"]:checked+label {
-  background-color: #b
+  background-color: #BBB;
 

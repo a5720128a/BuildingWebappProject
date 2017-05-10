@@ -38,19 +38,20 @@
 
     <h2>{{ question.question_text }}<h2>
 	{% for choice in question.choice_set.all %}
+<div class="radio-toolbar">
 <ul>
             {% if choice.corrects == 0 %}
-	    <input type="radio" id="f-option" name="{{question.id}}" id="choice{{ forloop.counter }}" style="color:red" value="{{ choice.corrects }}" />
+	    <input type="radio" name="{{question.id}}" id="choice1" style="color:red" value="{{ choice.corrects }}" />
             <label style="color:red" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
             {% else %}
-	    <input type="radio" id="f-option" name="{{question.id}}" id="choice{{ forloop.counter }}" style="color:green" value="{{ choice.corrects }}" />
+	    <input type="radio" name="{{question.id}}" id="choice2" style="color:green" value="{{ choice.corrects }}" />
             <label style="color:green" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
             {% endif %}
 </ul>
+</div>
 	{% endfor %}
     <br>
 {% endfor %}
-
 </div>
 
 <div align="center">

@@ -31,26 +31,27 @@
 {% endif %}
 
 <form action="{% url 'quiz:add_player' %}" method="post">
-<div class="radio-toolbar">
+
 {% csrf_token %}
 
 {% for question in latest_question_list %}
 
     <h2>{{ question.question_text }}<h2>
 	{% for choice in question.choice_set.all %}
+<div class="radio-toolbar">
 <ul>
             {% if choice.corrects == 0 %}
-	    <input type="radio" id="f-option" name="{{question.id}}" id="choice{{ forloop.counter }}" style="color:red" value="{{ choice.corrects }}" />
-            <label style="color:red" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
+	    <input type="radio" name="{{question.id}}" id="{{question.id}}choice{{ forloop.counter }}" style="color:red" value="{{ choice.corrects }}" />
+            <label style="color:red" for="{{question.id}}choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
             {% else %}
-	    <input type="radio" id="f-option" name="{{question.id}}" id="choice{{ forloop.counter }}" style="color:green" value="{{ choice.corrects }}" />
-            <label style="color:green" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
+	    <input type="radio" name="{{question.id}}" id="{{question.id}}choice{{ forloop.counter }}" style="color:green" value="{{ choice.corrects }}" />
+            <label style="color:green" for="{{question.id}}choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
             {% endif %}
 </ul>
+</div>
 	{% endfor %}
     <br>
 {% endfor %}
-</div>
 </div>
 
 <div align="center">
