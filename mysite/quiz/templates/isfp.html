@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ISFP</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
+
+</head>
+<body>
+
+<br>
+<div id="main" align="center">
+<img src="{% static "quiz/logo.jpg" %}" width="769" height="300" alt="logo"/>
+<br>
+<div id="main" align="left">
+<h1>ISFP</h1>
+<br>
+<h2>The Artist : ศิลปิน</h2>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คุณเป็นคนที่เห็นอกเห็นใจผู้อื่น มีเมตตา เปิดเผย ใจดี อ่อนไหวง่าย อ่อนน้อมถ่อมตน คุณสนใจที่จะเรียนรู้ในเรื่องที่เกี่ยวกับผู้คน สังคม ศิลปะ คุณมีความเป็นศิลปินอยู่ในตัว คุณไม่ชอบอยู่ใต้กฎเกณฑ์หรือข้อบังคับใดๆ คุณเป็นคนสบายๆ ไม่รีบร้อน คุณสามารถหยุดสิ่งที่คุณกำลังทำอยู่ทุกอย่างได้ หากคุณอยากทำอย่างอื่นมากกว่าขึ้นมา
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คุณมีบุคลิกที่ดึงดูดใจ เป็นกันเอง เข้ากับคนอื่นได้ง่าย คุณเป็นคนที่คนอื่นอยากอยู่ใกล้ๆ เชื่อถือได้ และเข้าใจผู้อื่น
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เรื่องความรัก หากชอบใครแล้วคุณจะทุ่มเทให้ทุกอย่าง ทั้งกายและใจ ซื่อสัตย์ คุณเป็นคนที่โรแมนติก คอยหมั่นดูแลความสัมพันธ์ให้สดชื่นและสดใสอยู่เสมอ หากถูกปฎิเสธ คุณจะวิเคราะห์หาเหตุผลเงียบๆ คนเดียว จนกว่าจะทำใจได้คุณถึงจะกลับมาสนุกสนาน เฮฮาได้อีกครั้ง
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คุณชอบที่จะทำงานกับคนที่ให้ความร่วมมือดี คุณเชื่อมั่นในการทำงานเป็นทีม คุณชอบที่จะสนุกสนานกับชีวิต
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คุณควรระวังที่จะมองข้ามความต้องการของตัวเอง เนื่องจากคุณเป็นคนที่เข้าใจผู้อื่น และชอบที่จะทำให้ผู้อื่นมีความสุข บางครั้งมองข้ามความต้องการลึกๆภายในของตัวเองไป คุณควรให้ความสำคัญกับความรู้สึกของตนเองมากขึ้นเพื่อสามารถให้ความช่วยเหลือผู้อื่น โดยไม่บั่นทอนเวลาและความรู้สึกของคุณมากจนเกินไป
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;คุณจะกังวลใจและกลัวการขัดแย้งกับคนอื่น คุณมักจะรับผิดชอบเมื่อเกิดการขัดแย้ง ทั้งที่บางครั้งมันไม่ใช่ความผิดของคุณเลย และมันมักจะทำให้คุณหดหู่ โทษตัวเอง ไม่พอใจในความสำเร็จของตัวเอง
+<br><br>
+<h2>อาชีพที่เหมาะสมกับลักษณะบุคลิกภาพ</h2>นักดนตรี ครู ศิลปิน บรรณารักษ์ นักสังคมสงเคราะห์ ผู้แต่งเพลง นักเขียน งานฝีมือ สาธารณสุข เทคนิค บริการ งานเสมียน เสมียนพัสดุ พยาบาล ผู้ช่วยทันตแพทย์ นักบัญชี ช่างกล
+<br><br>
+ISFP เข้ากันได้ดีที่สุดกับ <a href="{% url 'quiz:esfp' %}">ESFP</a>
+, <a href="{% url 'quiz:isfp' %}">ISFP</a>
+<br><br><br>
+<p align="center">
+<img src="{% static "quiz/facebook.png" %}" width="100" height="100" alt="home"/>
+</p>
+<br>
+
+<div id="main" align="center">
+<table>
+{% if latest_player_list %}
+    <tr>
+	<th>Player</th>
+	<th>Facebook</th>
+    </tr>
+
+    {% for player in latest_player_list %}
+        {% if player.personaltiy == "ISFP" %}
+            <tr>
+                <td>{{ player.player_text }}</td></li>
+	            <td>{{ player.facebook }}</td>
+            </tr>
+        {% endif %}
+    {% endfor %}    
+{% else %}
+    <p><h5>No player play this quiz.<h5></p>
+{% endif %}
+</table>
+</div>
+
+<br><br>
+</div>
+<a href="{% url 'quiz:index' %}">
+<img src="{% static "quiz/home.png" %}" width="100" height="100" alt="home"/>
+</a>
+<br>
+<a href="{% url 'quiz:personality' %}">
+<img src="{% static "quiz/help.png" %}" width="150" height="100" alt="key"/>
+</a>
+<br><br><br>
+</div>
+</body>
+</html>
+
+
+
