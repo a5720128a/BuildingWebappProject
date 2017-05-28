@@ -41,11 +41,11 @@
 <div class="radio-toolbar">
 <ul>
             {% if choice.corrects == 0 %}
-	    <input type="radio" name="{{question.id}}" id="choice1" style="color:red" value="{{ choice.corrects }}" />
-            <label style="color:red" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
+	    <input type="radio" name="{{question.id}}" id="{{question.id}}choice{{ forloop.counter }}" style="color:red" value="{{ choice.corrects }}" />
+            <label style="color:red" for="{{question.id}}choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
             {% else %}
-	    <input type="radio" name="{{question.id}}" id="choice2" style="color:green" value="{{ choice.corrects }}" />
-            <label style="color:green" for="choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
+	    <input type="radio" name="{{question.id}}" id="{{question.id}}choice{{ forloop.counter }}" style="color:green" value="{{ choice.corrects }}" />
+            <label style="color:green" for="{{question.id}}choice{{ forloop.counter }}" >{{ choice.choice_text }}</label><br />
             {% endif %}
 </ul>
 </div>

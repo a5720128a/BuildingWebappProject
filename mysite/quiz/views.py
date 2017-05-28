@@ -231,6 +231,7 @@ def add_player(request):
     #link ไปยัง หน้าของบุคลิกนั้นๆหลังคำนวณเสร็จ
     link = "quiz:"+the_personality.lower()
     context = {'the_personality':the_personality , 'link':link}
-    return render(request,'results.html',context)
+    #return render(request,'results.html',context)
+    return HttpResponseRedirect(reverse(link))
 
 
